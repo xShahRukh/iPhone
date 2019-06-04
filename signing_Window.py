@@ -2,8 +2,11 @@ import requests # pip import requests
 import json
 import os
 
-url= "https://ipsw.me/api/ios/v3/device/iPhone9,3"
-
+device = input("Enter Your Device Code... Example: iPhone9,3. (or else press 'Y' to go with default(iPhone 7))")
+if device == "Y" or device == "y":
+	url= "https://ipsw.me/api/ios/v3/device/iPhone9,3"
+else:
+	url= "https://ipsw.me/api/ios/v3/device/"+device
 a = requests.get(url)
 
 response = a.content
